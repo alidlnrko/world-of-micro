@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Энергия, выделяемая при делении тяжёлых элементов</title>
+    <link rel="stylesheet" href="first_lesson.css">
+    
+    <!-- Подключение MathJax для отображения формул -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">World of Particles</a>
+            <ul class="nav-links">
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">Главная</a></li>
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Энергия, выделяемая при делении тяжёлых элементов</h1>
+        <section class="video-section">
+            <h2>🎥 Видеоурок</h2>
+            <video width="100%" controls>
+                <source src="spin_and_angular_momentum.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </section>
+
+        <section>
+            <h2>Процесс деления тяжёлых элементов</h2>
+            <p>Деление тяжёлых элементов, таких как уран-235 или плутоний-239, является источником энергии, используемой в ядерных реакторах и атомных бомбах. Этот процесс происходит, когда ядро тяжёлого элемента поглощает нейтрон, становится нестабильным и делится на два или более меньших ядра, выделяя при этом большое количество энергии.</p>
+            <p>Пример реакции деления урана-235:</p>
+            <p>$$ \text{U} + \text{n} \rightarrow \text{Ba} + \text{Kr} + 3\text{n} + E $$</p>
+            <p>Где:
+                <ul>
+                    <li>U — атом урана-235;</li>
+                    <li>n — поглощённый нейтрон;</li>
+                    <li>Ba и Kr — продукты деления;</li>
+                    <li>3n — выделенные нейтроны;</li>
+                    <li>E — выделенная энергия.</li>
+                </ul>
+            </p>
+            <h3>Формула энергии, выделяющейся при делении</h3>
+            <p>Энергия, выделяемая при делении ядер, может быть вычислена с использованием следующей формулы, где \( \Delta m \) — это разница масс между исходным ядром и суммой масс продуктов деления:</p>
+            <p>$$ E = \Delta m \cdot c^2 $$</p>
+            <p>где \( c \) — скорость света в вакууме.</p>
+        </section>
+
+        <form id="quiz-form">
+            <h2>Тест</h2>
+            <div class="quiz-form">
+                <label>1. Какой процесс описывает выделение энергии в ядерных реакторах?</label><br>
+                <input type="radio" name="q1" value="1"> Ядерное деление.<br>
+                <input type="radio" name="q1" value="2"> Термоядерный синтез.<br>
+                <input type="radio" name="q1" value="3"> Альфа-распад.<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("check-btn").addEventListener("click", function() {
+            let score = 0;
+            const answers = { q1: "1" };
+            const formData = new FormData(document.getElementById("quiz-form"));
+
+            for (let [question, answer] of formData.entries()) {
+                if (answers[question] === answer) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = "Вы набрали " + score + " баллов.";
+        });
+    </script>
+</body>
+</html>

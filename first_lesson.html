@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>введение в физику элементарнных частиц</title>
+    <link rel="stylesheet" href="c:\Users\user\Desktop\ib project 2024-2025\web\particle\style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">world of particles
+            </a>
+            <ul class="nav-links">
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">в меню</a></li>
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">разделы уроков</a></li>
+            </ul>
+            <div class="nuclear">
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Фи́зика элемента́рных части́ц 1 урок</h1>
+        <video width="100%" controls>
+            <source src="video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <form id="quiz-form">
+            <div class="quiz-form">
+                <label>Что такое элементарная частица?</label><br>
+                <input type="radio" name="q1" value="синий">  Частица, которая состоит из атомов.
+
+                <br>
+                <input type="radio" name="q1" value="красный"> Частица, не имеющая внутренней структуры.
+
+                <br>
+                <input type="radio" name="q1" value="синий">  Частица, которая распадается на протоны и нейтроны.<br>
+                <input type="radio" name="q1" value="синий"> Любая частица в атоме
+                <br>
+            </div>
+            <div class="quiz-form">
+                <label>2.  Кварки это..</label><br>
+                <input type="radio" name="q2" value="3"> бесструктурная элементарная частица и фундаментальная составляющая материи
+                <br>
+                <input type="radio" name="q2" value="2"> частица вещества микроскопических размеров и массы, наименьшая часть химического элемента
+                <br>
+                <input type="radio" name="q2" value="2"> фундаментальные частицы с полуцелым спином, не участвующие в сильном взаимодействии
+                <br>
+            </div>
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+        <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+    </div>
+    <aside>
+       <h1> Фи́зика элемента́рных части́ц (ФЭЧ), часто называемая также субъядерной физикой — раздел физики, изучающий структуру и свойства элементарных частиц и их взаимодействия.
+       </h1>
+
+        <h1>Основные понятия:
+        </h1>
+        
+        <li>
+            <ol>
+                1.Кварки — образуют протоны и нейтроны.
+
+
+            </ol>
+            <ol>
+                2.Лептоны — такие как электрон и нейтрино.
+
+
+
+            </ol>
+            <ol>   
+                3. Бозоны — переносят силы (например, фотон для электромагнитного взаимодействия).
+
+            </ol>
+            <ol>
+                4. Фундамента́льные физи́ческие постоя́нные (физические постоянные, физические константы, фундаментальные постоянные, мировые постоянные) — постоянные величины, входящие в уравнения, описывающие физические законы природы и свойства материи
+            </ol>
+        </li>
+        
+
+
+    </aside>
+
+    <script>
+        document.getElementById("check-btn").addEventListener("click", checkQuiz);
+
+        function checkQuiz() {
+            let score = 0;
+            const answers = { q1: "красный", q2: "3" };
+            const formData = new FormData(document.getElementById("quiz-form"));
+
+            for (let [question, answer] of formData.entries()) {
+                if (answers[question] === answer) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = "Вы набрали " + score + " из 2 баллов.";
+        }
+        
+    </script>
+    
+</body>
+</html>
+
+

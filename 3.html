@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Классификация элементарных частиц</title>
+    <link rel="stylesheet" href="2style.css">
+
+    <!-- Подключение MathJax для отображения формул -->
+    <script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">World of Particles</a>
+            <ul class="nav-links">
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">Главная</a></li>
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Классификация элементарных частиц</h1>
+        
+        <video width="100%" controls>
+            <source src="video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+
+        <section>
+            <h2>Основные типы элементарных частиц</h2>
+
+            <h3>1. Фермионы</h3>
+            <p>Фермионы подчиняются принципу запрета Паули. Они включают:</p>
+            <ul>
+                <li><strong>Кварки</strong> — составляющие адроны (протоны и нейтроны).</li>
+                <li><strong>Лептоны</strong> — электроны, мюоны, тау-лептоны и нейтрино.</li>
+            </ul>
+            <p>Кварки взаимодействуют через сильное взаимодействие, а лептоны — через слабое и электромагнитное взаимодействия.</p>
+
+            <h3>2. Бозоны</h3>
+            <p>Бозоны являются переносчиками взаимодействий. Сюда входят:</p>
+            <ul>
+                <li><strong>Глюоны</strong> — переносчики сильного взаимодействия.</li>
+                <li><strong>Фотоны</strong> — переносчики электромагнитного взаимодействия.</li>
+                <li><strong>W и Z бозоны</strong> — переносчики слабого взаимодействия.</li>
+                <li><strong>Гравитоны</strong> (гипотетические) — переносчики гравитационного взаимодействия.</li>
+            </ul>
+
+            <h3>3. Адроны</h3>
+            <p>Адроны — составные частицы, состоящие из кварков. Существуют два типа адронов:</p>
+            <ul>
+                <li><strong>Баррионы</strong> — состоят из трёх кварков (например, протон и нейтрон).</li>
+                <li><strong>Мезоны</strong> — состоят из кварка и антикварка.</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>Схема классификации частиц(взято из википедии)</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Standard_Model_of_Elementary_Particles_ru.svg" alt="Схема классификации частиц" class="center" >
+        </section>
+
+        <form id="quiz-form">
+            <h2>Тест</h2>
+
+            <div class="quiz-form">
+                <label>1. Какая частица переносит электромагнитное взаимодействие?</label><br>
+                <input type="radio" name="q1" value="1"> Глюон<br>
+                <input type="radio" name="q1" value="2"> Фотон<br>
+                <input type="radio" name="q1" value="3"> W-бозон<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>2. Сколько кварков содержится в одном протоне?</label><br>
+                <input type="radio" name="q2" value="1"> Два<br>
+                <input type="radio" name="q2" value="2"> Три<br>
+                <input type="radio" name="q2" value="3"> Четыре<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>3. К какому классу частиц относится электрон?</label><br>
+                <input type="radio" name="q3" value="1"> Бозоны<br>
+                <input type="radio" name="q3" value="2"> Кварки<br>
+                <input type="radio" name="q3" value="3"> Лептоны<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("check-btn").addEventListener("click", function() {
+            let score = 0;
+            const answers = { q1: "2", q2: "2", q3: "3" };
+            const formData = new FormData(document.getElementById("quiz-form"));
+
+            for (let [question, answer] of formData.entries()) {
+                if (answers[question] === answer) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = "Вы набрали " + score + " баллов.";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Энергия связи ядра</title>
+    <link rel="stylesheet" href="first_lesson.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">World of Particles</a>
+            <ul class="nav-links">
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">Главная</a></li>
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Энергия связи ядра</h1>
+        <section class="video-section">
+            <h2>🎥 Видеоурок</h2>
+            <video width="100%" controls>
+                <source src="spin_and_angular_momentum.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </section>
+        <section>
+            <h2>Теория энергии связи ядра</h2>
+            <p>Энергия связи ядра — это энергия, которая удерживает протоны и нейтроны в составе атомного ядра. Эта энергия зависит от числа нуклонов в ядре и играет ключевую роль в стабильности ядерных структур.</p>
+            <p>Формула энергии связи для изотопа может быть представлена как:</p>
+            <p><i>E = (Z * m_p + N * m_n - m) * c²</i>, где:</p>
+            <ul>
+                <li><b>Z</b> — количество протонов в ядре,</li>
+                <li><b>N</b> — количество нейтронов,</li>
+                <li><b>m_p</b>, <b>m_n</b> — массы протона и нейтрона соответственно,</li>
+                <li><b>m</b> — масса ядра,</li>
+                <li><b>c</b> — скорость света.</li>
+            </ul>
+        </section>
+
+        <form id="quiz-form">
+            <h2>Тест</h2>
+            <div class="quiz-form">
+                <label>1. Что такое энергия связи ядра?</label><br>
+                <input type="radio" name="q1" value="1"> Энергия, необходимая для разделения атома на частицы.<br>
+                <input type="radio" name="q1" value="2"> Энергия, которая удерживает нуклоны в составе атомного ядра.<br>
+                <input type="radio" name="q1" value="3"> Энергия, выделяемая при делении ядра.<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("check-btn").addEventListener("click", function() {
+            let score = 0;
+            const answers = { q1: "2" };
+            const formData = new FormData(document.getElementById("quiz-form"));
+
+            for (let [question, answer] of formData.entries()) {
+                if (answers[question] === answer) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = "Вы набрали " + score + " баллов.";
+        });
+    </script>
+</body>
+</html>

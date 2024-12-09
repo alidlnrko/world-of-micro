@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Взаимодействия</title>
+    <link rel="stylesheet" href="2style.css">
+
+    <!-- Подключение MathJax для отображения формул -->
+    <script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">World of Particles</a>
+            <ul class="nav-links">
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">Главная</a></li>
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Основные взаимодействия</h1>
+        
+        <video width="100%" controls>
+            <source src="video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+
+        <section>
+            <h2>Четыре фундаментальных взаимодействия</h2>
+
+            <h3>1. Сильное взаимодействие</h3>
+            <p>Сильное взаимодействие удерживает протоны и нейтроны в ядре. Оно действует на расстояниях порядка \(10^{-15}\) м и описывается потенциалом Юкавского:</p>
+            <p>$$ V(r) = -g \frac{e^{-r / r_0}}{r} $$</p>
+            <p>Здесь \( r \) — расстояние между частицами, \( r_0 \) — характерный радиус действия.</p>
+
+            <h3>2. Слабое взаимодействие</h3>
+            <p>Слабое взаимодействие отвечает за радиоактивный бета-распад. Слабое взаимодействие действует на расстояниях порядка \(10^{-18}\) м и связано с обменом W и Z бозонами.</p>
+
+            <h3>3. Электромагнитное взаимодействие</h3>
+            <p>Электромагнитное взаимодействие действует между заряженными частицами и подчиняется закону Кулона:</p>
+            <p>$$ F = k \frac{q_1 \cdot q_2}{r^2} $$</p>
+            <p>Здесь \( F \) — сила взаимодействия, \( q_1 \) и \( q_2 \) — заряды частиц, \( r \) — расстояние между ними, \( k \) — константа Кулона.</p>
+
+            <h3>4. Гравитационное взаимодействие</h3>
+            <p>Гравитационное взаимодействие действует между всеми телами с массой и подчиняется закону всемирного тяготения:</p>
+            <p>$$ F = G \frac{m_1 \cdot m_2}{r^2} $$</p>
+            <p>Здесь \( F \) — сила гравитации, \( m_1 \) и \( m_2 \) — массы тел, \( r \) — расстояние между ними, \( G \) — гравитационная постоянная.</p>
+
+        </section>
+
+        <form id="quiz-form">
+            <h2>Тест</h2>
+
+            <div class="quiz-form">
+                <label>1. Какое взаимодействие удерживает протоны и нейтроны в ядре?</label><br>
+                <input type="radio" name="q1" value="1"> Сильное<br>
+                <input type="radio" name="q1" value="2"> Слабое<br>
+                <input type="radio" name="q1" value="3"> Гравитационное<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>2. Какой бозон участвует в слабом взаимодействии?</label><br>
+                <input type="radio" name="q2" value="1"> Фотон<br>
+                <input type="radio" name="q2" value="2"> W и Z бозоны<br>
+                <input type="radio" name="q2" value="3"> Глюон<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>3. Какая формула описывает закон Кулона?</label><br>
+                <input type="radio" name="q3" value="1"> \( F = k \frac{q_1 \cdot q_2}{r^2} \)<br>
+                <input type="radio" name="q3" value="2"> \( F = G \frac{m_1 \cdot m_2}{r^2} \)<br>
+                <input type="radio" name="q3" value="3"> \( V = -g \frac{e^{-r / r_0}}{r} \)<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("check-btn").addEventListener("click", function() {
+            let score = 0;
+            const answers = { q1: "1", q2: "2", q3: "1" };
+            const formData = new FormData(document.getElementById("quiz-form"));
+
+            for (let [question, answer] of formData.entries()) {
+                if (answers[question] === answer) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = "Вы набрали " + score + " баллов.";
+        });
+    </script>
+</body>
+</html>

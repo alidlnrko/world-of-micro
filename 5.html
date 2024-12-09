@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адроны</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Подключение MathJax для отображения формул -->
+    <script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">World of Particles</a>
+            <ul class="nav-links">
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">Главная</a></li>
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Адроны</h1>
+        
+        <video width="100%" controls>
+            <source src="video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+
+        <section>
+            <h2>Что такое адроны?</h2>
+            <p>Адроны — это составные частицы, которые участвуют в сильных взаимодействиях. Адроны состоят из кварков, связанных между собой глюонами в соответствии с принципами квантовой хромодинамики (КХД). Все адроны делятся на два основных типа: барионы и мезоны.</p>
+        </section>
+
+        <section>
+            <h2>Классификация адронов</h2>
+            <ul>
+                <li><strong>Барионы</strong> (состоят из трёх кварков):
+                    <ul>
+                        <li>Протон (\(uud\))</li>
+                        <li>Нейтрон (\(udd\))</li>
+                    </ul>
+                </li>
+                <li><strong>Мезоны</strong> (состоят из кварка и антикварка):
+                    <ul>
+                        <li>Пи-мезон (\(\pi^+\), \(\pi^0\), \(\pi^-\))</li>
+                        <li>Каон (\(K^+\), \(K^0\), \(K^-\))</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Состав адронов</h2>
+            <p>Адроны состоят из кварков и антикварков, которые удерживаются глюонами. Например, протон (\(uud\)) состоит из двух верхних (u) и одного нижнего (d) кварка, а нейтрон (\(udd\)) — из двух нижних (d) и одного верхнего (u) кварка.</p>
+        </section>
+
+        <section>
+            <h2>Свойства адронов</h2>
+            <ul>
+                <li><strong>Спин:</strong> адроны могут быть как фермионами (\(s = \frac{1}{2}, \frac{3}{2}, \dots\)) — барионы, так и бозонами (\(s = 0, 1\)) — мезоны.</li>
+                <li><strong>Масса:</strong> масса адронов определяется суммой масс составляющих кварков и вкладом энергии связей между ними.</li>
+                <li><strong>Электрический заряд:</strong> заряд зависит от состава кварков. Например, протон имеет заряд \(+1\), нейтрон — \(0\).</li>
+                <li><strong>Участие во взаимодействиях:</strong> адроны участвуют в сильных, слабых, электромагнитных и гравитационных взаимодействиях.</li>
+            </ul>
+        </section>
+
+        <form id="quiz-form">
+            <h2>Тест</h2>
+
+            <div class="quiz-form">
+                <label>1. Какие частицы относятся к адронам?</label><br>
+                <input type="radio" name="q1" value="1"> Электроны<br>
+                <input type="radio" name="q1" value="2"> Протоны и нейтроны<br>
+                <input type="radio" name="q1" value="3"> Нейтрино<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>2. Сколько кварков в барионе?</label><br>
+                <input type="radio" name="q2" value="1"> 2<br>
+                <input type="radio" name="q2" value="2"> 3<br>
+                <input type="radio" name="q2" value="3"> 1<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>3. Какая кварковая структура у нейтрона?</label><br>
+                <input type="radio" name="q3" value="1"> \(uud\)<br>
+                <input type="radio" name="q3" value="2"> \(udd\)<br>
+                <input type="radio" name="q3" value="3"> \(uuu\)<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("check-btn").addEventListener("click", function() {
+            let score = 0;
+            const answers = { q1: "2", q2: "2", q3: "2" };
+            const formData = new FormData(document.getElementById("quiz-form"));
+
+            for (let [question, answer] of formData.entries()) {
+                if (answers[question] === answer) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = "Вы набрали " + score + " баллов.";
+        });
+    </script>
+</body>
+</html>

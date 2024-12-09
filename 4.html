@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лептоны</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Подключение MathJax для отображения формул -->
+    <script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">World of Particles</a>
+            <ul class="nav-links">
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">Главная</a></li>
+                <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Лептоны</h1>
+        
+        <video width="100%" controls>
+            <source src="video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+
+        <section>
+            <h2>Что такое лептоны?</h2>
+            <p>Лептоны — это элементарные частицы с полуцелым спином (\(s = \frac{1}{2}\)), которые не участвуют в сильных взаимодействиях, но подчиняются слабым, электромагнитным и гравитационным взаимодействиям. К лептонам относятся шесть частиц и шесть соответствующих античастиц.</p>
+        </section>
+
+        <section>
+            <h2>Классификация лептонов</h2>
+            <ul>
+                <li><strong>Заряженные лептоны</strong>:
+                    <ul>
+                        <li>Электрон (\(e^-\))</li>
+                        <li>Мюон (\(\mu^-\))</li>
+                        <li>Тау-лептон (\(\tau^-\))</li>
+                    </ul>
+                </li>
+                <li><strong>Нейтральные лептоны (нейтрино)</strong>:
+                    <ul>
+                        <li>Электронное нейтрино (\(\nu_e\))</li>
+                        <li>Мюонное нейтрино (\(\nu_\mu\))</li>
+                        <li>Тау-нейтрино (\(\nu_\tau\))</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Свойства лептонов</h2>
+            <ul>
+                <li><strong>Спин:</strong> \(s = \frac{1}{2}\) (фермионы).</li>
+                <li><strong>Масса:</strong> электроны имеют массу \(m_e = 9.109 \times 10^{-31}\) кг, мюоны и тау-лептоны тяжелее.</li>
+                <li><strong>Электрический заряд:</strong> заряженные лептоны имеют заряд \(-1\), нейтрино — электрически нейтральны.</li>
+                <li><strong>Взаимодействия:</strong> лептоны участвуют в слабых, электромагнитных и гравитационных взаимодействиях, но не участвуют в сильном взаимодействии.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Схема классификации лептонов</h2>
+            <ul>
+                <li>
+                    первое поколение: электрон, электронное нейтрино
+                </li>
+                <li>
+                    второе поколение: мюон, мюонное нейтрино
+                </li>
+                <li>    
+                    третье поколение: тау-лептон, тау-нейтрино
+                </li>
+            </ul>
+        </section>
+
+        <form id="quiz-form">
+            <h2>Тест</h2>
+
+            <div class="quiz-form">
+                <label>1. Какая из следующих частиц является лептоном?</label><br>
+                <input type="radio" name="q1" value="1"> Протон<br>
+                <input type="radio" name="q1" value="2"> Электрон<br>
+                <input type="radio" name="q1" value="3"> Глюон<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>2. Сколько типов нейтрино существует?</label><br>
+                <input type="radio" name="q2" value="1"> 2<br>
+                <input type="radio" name="q2" value="2"> 3<br>
+                <input type="radio" name="q2" value="3"> 4<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>3. Участвуют ли лептоны в сильном взаимодействии?</label><br>
+                <input type="radio" name="q3" value="1"> Да<br>
+                <input type="radio" name="q3" value="2"> Нет<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("check-btn").addEventListener("click", function() {
+            let score = 0;
+            const answers = { q1: "2", q2: "2", q3: "2" };
+            const formData = new FormData(document.getElementById("quiz-form"));
+
+            for (let [question, answer] of formData.entries()) {
+                if (answers[question] === answer) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText = "Вы набрали " + score + " баллов.";
+        });
+    </script>
+</body>
+</html>

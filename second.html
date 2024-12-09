@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Структура атома и ядра</title>
+
+    <!-- Подключение MathJax для рендеринга формул -->
+    <script type="text/javascript" id="MathJax-script" async 
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <link rel="stylesheet" href="first_lesson.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">🌌 World of Particles</a>
+        <ul class="nav-links">
+            <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\main_menu.html">В меню</a></li>
+            <li><a href="c:\Users\user\Desktop\ib project 2024-2025\web\first_lesson.html">Разделы уроков</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="video-section">
+        <h2>🎥 Видеоурок</h2>
+        <video width="100%" controls>
+            <source src="spin_and_angular_momentum.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </section>
+    <h1>📘 Структура атома и ядра</h1>
+
+    <section class="theory">
+        <h2>📘 Теория</h2>
+        <p>Структура атома состоит из положительно заряженного ядра и окружающих его отрицательно заряженных электронов. Ядро состоит из протонов и нейтронов, которые называют нуклонами. Основу современного представления о строении атома заложил Эрнест Резерфорд.</p>
+
+        <h3>📘 Основные понятия</h3>
+        <ul>
+            <li><b>Протон</b> — частица с положительным зарядом \(+e\).</li>
+            <li><b>Нейтрон</b> — частица с нулевым электрическим зарядом.</li>
+            <li><b>Электрон</b> — частица с отрицательным зарядом \(-e\).</li>
+        </ul>
+
+        <h3>📘 Основные формулы</h3>
+        <p>1. Число нуклонов (массовое число \(A\)) определяется как сумма числа протонов \(Z\) и нейтронов \(N\):  
+            \[
+            A = Z + N
+            \]
+        </p>
+        <p>2. Закон сохранения энергии при ядерных реакциях:  
+            \[
+            E = mc^2
+            \]
+            где \(m\) — масса, \(c\) — скорость света (\(c = 3 \times 10^8 \, \text{м/с}\)).  
+        </p>
+        <p>3. Дефект массы и энергия связи ядра:  
+            \[
+            \Delta m = Z \cdot m_p + N \cdot m_n - m_{\text{ядра}}
+            \]
+            \[
+            E_{\text{св}} = \Delta m \cdot c^2
+            \]
+            где \(m_p\) — масса протона, \(m_n\) — масса нейтрона, \(m_{\text{ядра}}\) — масса ядра.  
+        </p>
+    </section>
+
+    <section class="quiz-section">
+        <h2>🧪 Тест</h2>
+        <form id="quiz-form">
+            <div class="quiz-form">
+                <label>1. Что входит в состав атомного ядра?</label><br>
+                <input type="radio" name="q1" value="синий">Только протоны.<br>
+                <input type="radio" name="q1" value="красный">Протоны и нейтроны.<br>
+                <input type="radio" name="q1" value="синий">Протоны, нейтроны и электроны.<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>2. Какая формула определяет массовое число ядра?</label><br>
+                <input type="radio" name="q2" value="красный">\(A = Z + N\)<br>
+                <input type="radio" name="q2" value="синий">\(A = Z - N\)<br>
+                <input type="radio" name="q2" value="синий">\(A = Z \cdot N\)<br>
+            </div>
+
+            <div class="quiz-form">
+                <label>3. Что показывает дефект массы?</label><br>
+                <input type="radio" name="q3" value="синий">Изменение заряда ядра.<br>
+                <input type="radio" name="q3" value="синий">Изменение энергии связи ядра.<br>
+                <input type="radio" name="q3" value="красный">Разницу между массой нуклонов и массой ядра.<br>
+            </div>
+
+            <button type="button" id="check-btn">Проверить</button>
+        </form>
+        <div id="result"></div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 World of Particles</p>
+</footer>
+
+<script>
+    document.getElementById("check-btn").addEventListener("click", checkQuiz);
+
+    function checkQuiz() {
+        let score = 0;
+        const answers = { q1: "красный", q2: "красный", q3: "красный" };
+        const formData = new FormData(document.getElementById("quiz-form"));
+
+        for (let [question, answer] of formData.entries()) {
+            if (answers[question] === answer) {
+                score++;
+            }
+        }
+
+        document.getElementById("result").innerText = "Вы набрали " + score + " из 3 баллов.";
+    }
+</script>
+
+</body>
+</html>
